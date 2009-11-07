@@ -22,7 +22,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	</bean>
 
 	<!-- JARDIN -->
-	<bean id="jardin" class="org.yannart.springgarden.Jardin">
+	<bean id="jardin" class="org.yannart.springgarden.Jardin" init-method="jardiner">
 		<property name="jardinier" ref="jardinier" />
 		<property name="parcelles">
 			<list>

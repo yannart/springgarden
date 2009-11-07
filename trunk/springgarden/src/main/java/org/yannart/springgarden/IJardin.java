@@ -6,6 +6,11 @@ package org.yannart.springgarden;
 public interface IJardin {
 
 	/**
+	 * S'occuper du jardin en nourrissant ses plantes.
+	 */
+	public abstract void jardiner();
+	
+	/**
 	 * Arrose chaque zone du jardin.
 	 */
 	public abstract void arrose();

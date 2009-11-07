@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * Classe abstraite que declare les methodes communes a toutes les plantes
  */
-@Component("plante")
+@Component
 public class Plante implements IPlante {
 
 	/**

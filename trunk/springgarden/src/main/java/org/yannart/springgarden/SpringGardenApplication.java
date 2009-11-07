@@ -1,13 +1,12 @@
 package org.yannart.springgarden;
 
-
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Classe que initialise l'application SpringGarden.
+ * Classe qui initialise l'application SpringGarden.
  */
 public class SpringGardenApplication {
-	
+
 	/**
 	 * Methode main ou commence le flux de l'application.
 	 * 
@@ -15,8 +14,8 @@ public class SpringGardenApplication {
 	 */
 	public static void main(String[] args) {
 
-		//Demarre le contexte de Spring
-		new ClassPathXmlApplicationContext(
-				"applicationContext.xml", SpringGardenApplication.class);
+		// Demarre le contexte de Spring
+		new ClassPathXmlApplicationContext("applicationContext.xml",
+				SpringGardenApplication.class);
 	}
 }

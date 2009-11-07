@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
@@ -17,9 +18,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<aop:aspectj-autoproxy />
 
 	<!-- JARDINIER -->
-	<bean id="jardinier" class="org.yannart.springgarden.Jardinier">
-		<property name="nom" value="Dupond" />
-	</bean>
+	<bean id="jardinier" class="org.yannart.springgarden.Jardinier" p:nom="Dupond" />
 
 	<!-- JARDIN -->
 	<bean id="jardin" class="org.yannart.springgarden.Jardin" init-method="jardiner">
@@ -64,30 +63,12 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	</bean>
 
 	<!--PLANTES -->
-	<bean id="tomate" parent="plante" scope="prototype">
-		<property name="nomPlante" value="Tomate" />
-	</bean>
-	<bean id="patate" parent="plante" scope="prototype">
-		<property name="nomPlante" value="Patate" />
-	</bean>
-	<bean id="choux" parent="plante" scope="prototype">
-		<property name="nomPlante" value="Choux" />
-	</bean>
-	<bean id="pomme" parent="plante" scope="prototype">
-		<property name="nomPlante" value="Pomme" />
-	</bean>
-	<bean id="poire" parent="plante" scope="prototype">
-		<property name="nomPlante" value="Poire" />
-	</bean>
-
-	<!--POIRE MALADE -->
-	<bean id="poireMalade" parent="plante" scope="prototype">
-		<property name="nomPlante" value="PoireMalade" />
-	</bean>
-
-	<!--PATATE MALADE -->
-	<bean id="patateMalade" parent="plante" scope="prototype">
-		<property name="nomPlante" value="PatateMalade" />
-	</bean>
+	<bean id="tomate" parent="plante" scope="prototype" p:nomPlante="Tomate" />
+	<bean id="patate" parent="plante" scope="prototype" p:nomPlante="Patate" />
+	<bean id="choux" parent="plante" scope="prototype" p:nomPlante="Choux" />
+	<bean id="pomme" parent="plante" scope="prototype" p:nomPlante="Pomme" />
+	<bean id="poire" parent="plante" scope="prototype" p:nomPlante="Poire" />
+	<bean id="poireMalade" parent="plante" scope="prototype" p:nomPlante="PoireMalade" />
+	<bean id="patateMalade" parent="plante" scope="prototype" p:nomPlante="PatateMalade" />
 </beans>
 

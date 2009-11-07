@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * Mauvaise herbe.
  */
-@Component(value="mauvaiseHerbe")
+@Component
 public class MauvaiseHerbe extends Plante {
 
 	/**

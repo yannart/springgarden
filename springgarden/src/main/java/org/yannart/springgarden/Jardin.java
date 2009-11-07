@@ -30,6 +30,28 @@ public class Jardin implements IJardin {
 	/**
 	 * {@inheritDoc}
 	 */
+	public void jardiner(){
+
+		// Montre le contenu du jardin */
+		System.out.println("\nJARDIN DE DEPART");
+		this.listerParcelles();
+ 
+		// Arrose tout le jardin */
+		System.out.println("\nON ARROSE LE JARDIN");
+		this.arrose();
+
+		// Met de l'engrais a tout le jardin */
+		System.out.println("\nON MET DE L'ENGRAIS DANS LE JARDIN");
+		this.mettreEngrais();
+
+		// Montre le contenu du jardin */
+		System.out.println("\nJARDIN A LA FIN");
+		this.listerParcelles();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	public void arrose() {
 		System.out.println(jardinier + " arrose le Jardin");
 		for (IParcelle zone : parcelles) {

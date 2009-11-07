@@ -10,7 +10,7 @@ public class Jardin implements IJardin {
 	/**
 	 * Parcelles du jardin.
 	 */
-	List<Parcelle> parcelles;
+	List<IParcelle> parcelles;
 
 	/**
 	 * Jardinier du jardin.
@@ -107,7 +107,7 @@ public class Jardin implements IJardin {
 	 * Définit les parcelles du jardin.
 	 * @param parcelles liste de parcelles du jardin.
 	 */
-	public void setParcelles(List<Parcelle> parcelles) {
+	public void setParcelles(List<IParcelle> parcelles) {
 		this.parcelles = parcelles;
 	}
 }

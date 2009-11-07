@@ -18,7 +18,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
 	<!-- JARDINIER -->
 	<bean id="jardinier" class="org.yannart.springgarden.Jardinier">
-		<constructor-arg name="nom" value="Dupond" />
+		<property name="nom" value="Dupond" />
 	</bean>
 
 	<!-- JARDIN -->

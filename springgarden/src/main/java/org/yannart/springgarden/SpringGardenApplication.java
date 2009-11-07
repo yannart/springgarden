@@ -16,7 +16,7 @@ public class SpringGardenApplication {
 
 		// Lit le fichier de configuration de Spring
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				"applicationContext.xml");
+				"applicationContext.xml", SpringGardenApplication.class);
 
 		// Recupere l'objet Jardin a partir du Bean Spring */
 		IJardin jardin = context.getBean("jardin", IJardin.class);

@@ -10,5 +10,11 @@ public interface IJardinier {
 	 * @return le nom du jardinier.
 	 */
 	public abstract String getNom();
+	
+	/**
+	 * Définit le nom du jardinier.
+	 * @param nom nom du jardinier
+	 */
+	public void setNom(String nom);
 
 }

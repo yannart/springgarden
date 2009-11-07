@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- ANNOTATIONS POUR L'INJECTION DE DÉPENDANCES -->
+	<context:annotation-config />
+
+	<!-- ANNOTATIONS POUR LA CREATION DE BEANS -->
+	<context:component-scan base-package="org.yannart.springgarden" />
+
+	<!-- ANNOTATIONS POUR AOP -->
+	<aop:aspectj-autoproxy />
+
+	<!-- JARDINIER -->
+	<bean id="jardinier" class="org.yannart.springgarden.Jardinier">
+		<constructor-arg name="nom" value="Dupond" />
+	</bean>
+
+	<!-- JARDIN -->
+	<bean id="jardin" class="org.yannart.springgarden.Jardin">
+		<property name="jardinier" ref="jardinier" />
+		<property name="parcelles">
+			<list>
+				<ref bean="potager" />
+				<ref bean="verger" />
+			</list>
+		</property>
+		<!-- Les doses sont aléatoires -->
+		<property name="doseEau" value="#{ T(java.lang.Math).random() * 100 }" />
+		<property name="doseEngrais" value="#{ T(java.lang.Math).random() * 50 }" />
+	</bean>
+
+	<!-- POTAGER -->
+	<bean id="potager" class="org.yannart.springgarden.Parcelle"
+		init-method="melanger">
+		<property name="nom" value="Potager" />
+		<property name="plantes">
+			<list>
+				<ref bean="tomate" />
+				<ref bean="patate" />
+				<ref bean="patateMalade" />
+				<ref bean="choux" />
+				<ref bean="choux" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- VERGER -->
+	<bean id="verger" class="org.yannart.springgarden.Parcelle"
+		init-method="melanger">
+		<property name="nom" value="Verger" />
+		<property name="plantes">
+			<list>
+				<ref bean="pomme" />
+				<ref bean="poireMalade" />
+				<ref bean="poire" />
+			</list>
+		</property>
+	</bean>
+
+	<!--PLANTES -->
+	<bean id="tomate" parent="plante" scope="prototype">
+		<property name="nomPlante" value="Tomate" />
+	</bean>
+	<bean id="patate" parent="plante" scope="prototype">
+		<property name="nomPlante" value="Patate" />
+	</bean>
+	<bean id="choux" parent="plante" scope="prototype">
+		<property name="nomPlante" value="Choux" />
+	</bean>
+	<bean id="pomme" parent="plante" scope="prototype">
+		<property name="nomPlante" value="Pomme" />
+	</bean>
+	<bean id="poire" parent="plante" scope="prototype">
+		<property name="nomPlante" value="Poire" />
+	</bean>
+
+	<!--POIRE MALADE -->
+	<bean id="poireMalade" parent="plante" scope="prototype">
+		<property name="nomPlante" value="PoireMalade" />
+	</bean>
+
+	<!--PATATE MALADE -->
+	<bean id="patateMalade" parent="plante" scope="prototype">
+		<property name="nomPlante" value="PatateMalade" />
+	</bean>
+</beans>
+

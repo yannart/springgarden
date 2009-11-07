@@ -11,20 +11,19 @@ public class Jardinier implements IJardinier {
 	private String nom;
 
 	/**
-	 * Construit un jardinier.
-	 * @param nom nom du jardinier.
-	 */
-	public Jardinier(String nom) {
-		this.nom = nom;
-	}
-
-	/**
 	 * {@inheritDoc}
 	 */
 	public String getNom() {
 		return nom;
 	}
-
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+ 
 	/**
 	 * {@inheritDoc}
 	 */

@@ -3,11 +3,12 @@ package org.yannart.springgarden;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import javax.annotation.Resource;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -20,7 +21,7 @@ public class MauvaiseHerbeAspect {
 	/**
 	 * Mauvaise herbe qui vole les nutriments.
 	 */
-	@Autowired
+	@Resource
 	IPlante mauvaiseHerbe;
 
 	/**
@@ -43,7 +44,8 @@ public class MauvaiseHerbeAspect {
 		Method method = ((MethodSignature) joinPoint.getSignature())
 				.getMethod();
 
-		System.out.println("    * mauvaise herbe sent la methode " + method.getName() + " sur " + plante.getNomPlante());
+		System.out.println("    * mauvaise herbe sent la methode "
+				+ method.getName() + " sur " + plante.getNomPlante());
 
 		// Ce qu'allais recevoir la plante est reçu par la mauvaise herbe
 		method.invoke(mauvaiseHerbe, joinPoint.getArgs());

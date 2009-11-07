@@ -38,7 +38,7 @@ public class Jardin implements IJardin {
  
 		// Arrose tout le jardin */
 		System.out.println("\nON ARROSE LE JARDIN");
-		this.arrose();
+		this.arroser();
 
 		// Met de l'engrais a tout le jardin */
 		System.out.println("\nON MET DE L'ENGRAIS DANS LE JARDIN");
@@ -52,7 +52,7 @@ public class Jardin implements IJardin {
 	/**
 	 * {@inheritDoc}
 	 */
-	public void arrose() {
+	public void arroser() {
 		System.out.println(jardinier + " arrose le Jardin");
 		for (IParcelle zone : parcelles) {
 			zone.arroser(doseEau);

@@ -26,7 +26,7 @@ public class MauvaiseHerbeAspect {
 
 	/**
 	 * Advice associé à l'éxécution d'une méthode avec le prefixe "nourri" d'un
-	 * bean avec le sufixe "Malade".
+	 * bean avec le suffixe "Malade".
 	 * 
 	 * @param joinPoint
 	 *            référence au point de jonction de l'aspect.

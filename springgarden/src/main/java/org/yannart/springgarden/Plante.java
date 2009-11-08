@@ -50,6 +50,14 @@ public class Plante implements IPlante {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
+	public String toString() {
+		return nomPlante;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getDetail() {
 		return "- " + nomPlante + " avec " + eau + "ml d'eau et " + engrais
 				+ "g d'engrais";
@@ -70,13 +78,5 @@ public class Plante implements IPlante {
 	 */
 	public void setNomPlante(String nomPlante) {
 		this.nomPlante = nomPlante;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public String toString() {
-		return nomPlante;
 	}
 }

@@ -32,19 +32,19 @@ public class Jardin implements IJardin {
 	 */
 	public void jardiner(){
 
-		// Montre le contenu du jardin */
+		// Montre le contenu du jardin
 		System.out.println("\nJARDIN DE DEPART");
 		this.listerParcelles();
  
-		// Arrose tout le jardin */
+		// Arrose tout le jardin
 		System.out.println("\nON ARROSE LE JARDIN");
 		this.arroser();
 
-		// Met de l'engrais a tout le jardin */
+		// Met de l'engrais a tout le jardin
 		System.out.println("\nON MET DE L'ENGRAIS DANS LE JARDIN");
 		this.mettreEngrais();
 
-		// Montre le contenu du jardin */
+		// Montre le contenu du jardin
 		System.out.println("\nJARDIN A LA FIN");
 		this.listerParcelles();
 	}
@@ -54,8 +54,8 @@ public class Jardin implements IJardin {
 	 */
 	public void arroser() {
 		System.out.println(jardinier + " arrose le Jardin");
-		for (IParcelle zone : parcelles) {
-			zone.arroser(doseEau);
+		for (IParcelle parcelle : parcelles) {
+			parcelle.arroser(doseEau);
 		}
 	}
 
@@ -64,8 +64,8 @@ public class Jardin implements IJardin {
 	 */
 	public void mettreEngrais() {
 		System.out.println(jardinier + " met de l'engrais");
-		for (IParcelle zone : parcelles) {
-			zone.mettreEngrais(doseEngrais);
+		for (IParcelle parcelle : parcelles) {
+			parcelle.mettreEngrais(doseEngrais);
 		}
 	}
 
@@ -74,8 +74,8 @@ public class Jardin implements IJardin {
 	 */
 	public void listerParcelles() {
 		System.out.println("Le Jardin de " + jardinier + " contient:");
-		for (IParcelle zone : parcelles) {
-			zone.listerPlantes();
+		for (IParcelle parcelle : parcelles) {
+			parcelle.listerPlantes();
 		}
 	}
 

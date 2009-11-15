@@ -11,12 +11,12 @@ public interface IJardin {
 	public abstract void jardiner();
 	
 	/**
-	 * Arrose chaque zone du jardin.
+	 * Arrose chaque parcelle du jardin.
 	 */
 	public abstract void arroser();
 
 	/**
-	 * Met de l'engrais dans chaque zone du jardin.
+	 * Met de l'engrais dans chaque parcelle du jardin.
 	 */
 	public abstract void mettreEngrais();
 

@@ -23,12 +23,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>3.0.0.RC2</version>
+			<version>3.0.1.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>3.0.0.RC2</version>
+			<version>3.0.1.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -41,14 +41,4 @@
 			<version>1.6.6</version>
 		</dependency>
 	</dependencies>
-
-	<!--
-		Repository pour Spring 3 (tant que la version finale n'est pas sortie)
-	-->
-	<repositories>
-		<repository>
-			<id>springsource maven repo</id>
-			<url>http://maven.springframework.org/milestone</url>
-		</repository>
-	</repositories>
 </project>
